@@ -54,31 +54,3 @@ Follow the instructions below to get the backend running locally.
     ```
     The server will start on the port specified in your `.env` file (e.g., `http://localhost:5000`).
 
-## API Usage (Endpoints)
-
-The following are the primary API endpoints available:
-
-### Authentication
-
-- **Register a new user**
-  - **Route**: `POST /api/users/register`
-  - **Body**: `{ "name": "John Doe", "email": "john@example.com", "password": "password123" }`
-  - **Access**: Public
-
-- **Login a user**
-  - **Route**: `POST /api/users/login`
-  - **Body**: `{ "email": "john@example.com", "password": "password123" }`
-  - **Access**: Public
-  - **Returns**: A JWT token for authenticating subsequent requests.
-
-### Scrap Prices
-
-- **Get all scrap prices**
-  - **Route**: `GET /api/prices`
-  - **Access**: Public
-
-- **Add or update a scrap price**
-  - **Route**: `POST /api/prices`
-  - **Access**: Private (Requires authentication token)
-  - **Headers**: `{ "Authorization": "Bearer <YOUR_JWT_TOKEN>" }`
-  - **Body**: `{ "material": "Copper", "price": "3.50" }`
